@@ -35,7 +35,11 @@ export const teachGpt = async () => {
 };
 
 export const askQuestion = async (q) => {
+  try {
   const client = await initializePineClient();
   // Query Pinecone vector store and GPT model for an answer
   return queryPineconeVectorStoreAndQueryLLM(client, indexName, q)
+  } catch (e) {
+    console.error('Oops something went wrong', e);
+  }
 }
