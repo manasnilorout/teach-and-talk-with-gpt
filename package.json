@@ -4,10 +4,10 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "start": "npm run build && serve -s build",
+    "ui": "npm run build && serve -s build",
     "build": "react-scripts build",
     "ask": "node src/cli",
-    "server": "node src/server",
+    "start": "node src/server",
     "teach": "node src/teachGpt",
     "recursiveAsk": "node src/recursiveAsk"
   },
