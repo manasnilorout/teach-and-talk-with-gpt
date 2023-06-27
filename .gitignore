@@ -3,3 +3,9 @@ node_modules/
 
 # ENV file
 .env
+
+# Build directory
+build/
+
+# Documents
+src/documents/

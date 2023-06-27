@@ -2,7 +2,7 @@ import * as dotenv from "dotenv";
 dotenv.config();
 
 import prompt from 'prompt';
-import {askQuestion} from './main.js';
+import {askQuestion} from './core/main.js';
 
 // Write code to read question from command line
 const doIt = async () => {

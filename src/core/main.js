@@ -1,11 +1,12 @@
 import * as dotenv from "dotenv";
 dotenv.config();
+import prompt from 'prompt';
 import { PineconeClient } from "@pinecone-database/pinecone";
 import { DirectoryLoader } from "langchain/document_loaders/fs/directory";
 import { TextLoader } from "langchain/document_loaders/fs/text";
 import { PDFLoader } from "langchain/document_loaders/fs/pdf";
 import { createPineconeIndex } from "./createPineconeIndex.js";
-import { updatePinecone } from "./updatePinecone.js";
+import { updatePinecone } from "../updatePinecone.js";
 import { queryPineconeVectorStoreAndQueryLLM } from "./queryPineconeAndQueryGPT.js";
 
 const loader = new DirectoryLoader("src/documents", {
@@ -13,7 +14,7 @@ const loader = new DirectoryLoader("src/documents", {
   ".pdf": (path) => new PDFLoader(path),
 });
 const docs = await loader.load();
-const indexName = "blue-tarf";
+const indexName = "red";
 const vectorDimension = 1536;
 
 const initializePineClient = async () => {
@@ -42,4 +43,13 @@ export const askQuestion = async (q) => {
   } catch (e) {
     console.error('Oops something went wrong', e);
   }
+}
+
+// Recursive askQuestion
+export const recusriveAskQuestion = async () => {
+  prompt.start();
+  const { question } = await prompt.get([{ name: 'question', description: `What's your question?` }]);
+  const answer = await askQuestion(question);
+  console.log('answer', answer);
+  await recusriveAskQuestion();
 }
