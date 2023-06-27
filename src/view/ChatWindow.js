@@ -47,7 +47,7 @@ function ChatGPT() {
 
   return (
     <div style={{ maxWidth: 600, margin: "20px auto", backgroundColor: "#212121", padding: 10, borderRadius: 10 }}>
-      <h1 style={{ textAlign: "center", color: "#4CAF50" }}>ChatGPT</h1>
+      <h1 style={{ textAlign: "center", color: "#4CAF50" }}>Periodic Library</h1>
       <div
         style={{
           border: "1px solid #4CAF50",

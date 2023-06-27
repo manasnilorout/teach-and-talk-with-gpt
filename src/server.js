@@ -16,7 +16,7 @@ app.get('/ping', (req, res) => {
 });
 
 app.post('/ai/get-answer', async (req, res) => {
-    const question = req.body?.question;
+    const question = req.body?.question || req.body?.message;
     const answer = await askQuestion(question);
     return res.send({ answer });
 });
