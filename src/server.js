@@ -19,6 +19,6 @@ app.post('/ai/get-answer', async (req, res) => {
     return res.send({ answer });
 });
 
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000, () => {
     console.log(`Server listening on port 3000`);
 });
