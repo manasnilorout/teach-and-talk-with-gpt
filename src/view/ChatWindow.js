@@ -33,7 +33,7 @@ function ChatGPT() {
     setMessages(newMessages);
 
     // Send a POST request to API and get the answer
-    const response = await fetch("/get-answer", {
+    const response = await fetch("https://teach-and-talk-with-gpt-production.up.railway.app/ai/get-answer", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ message: inputValue }),

@@ -2,10 +2,12 @@ import * as dotenv from "dotenv";
 dotenv.config();
 import express from 'express';
 import bodyParser from 'body-parser';
+import cors from 'cors';
 const { json, urlencoded } = bodyParser;
 import { askQuestion } from './core/main.js';
 
 const app = express();
+app.use(cors());
 app.use(json());
 app.use(urlencoded({ extended: true }));
 
