@@ -9,3 +9,4 @@ build/
 
 # Documents
 src/documents/
+src/core/output_hooks/
