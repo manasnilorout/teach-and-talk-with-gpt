@@ -1,7 +1,5 @@
-Write a post hook in cloud elements context based on examples provided in the uploaded file to extract full name from vendor response.
-Full name should be combination of first name and last name
-The response from vendor looks like below json
-{ "firstName": "Manas", "lastName": "Nilorout" }
-If lastName is not part of the response make sure to replace it by "NA"
-Make sure to do it only when response code is 200
-Output only the javascript code in the response
+Write a pre-hook that appends "/delete_now" to the request when request method is deletee
+Also add a query parameter permanent with value true to the request
+Always call done function in each block
+Always add detailed comments to the response code
+Output only the javascript code in the response no additional text
