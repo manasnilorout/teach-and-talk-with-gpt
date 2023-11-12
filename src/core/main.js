@@ -14,7 +14,7 @@ const loader = new DirectoryLoader("src/documents", {
   ".pdf": (path) => new PDFLoader(path),
 });
 const docs = await loader.load();
-const indexName = "red";
+const indexName = "red-index";
 const vectorDimension = 1536;
 
 const initializePineClient = async () => {

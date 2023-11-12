@@ -8,8 +8,9 @@
     "build": "react-scripts build",
     "ask": "node src/cli",
     "start": "node src/server",
-    "teach": "node src/teachGpt",
-    "recursiveAsk": "node src/recursiveAsk"
+    "teach": "node src/core/teachGpt",
+    "recursiveAsk": "node src/core/recursiveAsk",
+    "instructions": "node src/core/parseInstructionAndGenarateResponse"
   },
   "keywords": [],
   "author": "",
@@ -26,7 +27,8 @@
     "prompt": "^1.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-scripts": "^5.0.1"
+    "react-scripts": "^5.0.1",
+    "serve": "^14.2.1"
   },
   "engines": {
     "npm": ">=8.0.0 <10.0.0",

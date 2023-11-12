@@ -1,0 +1,7 @@
+Write a post hook in cloud elements context based on examples provided in the uploaded file to extract full name from vendor response.
+Full name should be combination of first name and last name
+The response from vendor looks like below json
+{ "firstName": "Manas", "lastName": "Nilorout" }
+If lastName is not part of the response make sure to replace it by "NA"
+Make sure to do it only when response code is 200
+Output only the javascript code in the response
