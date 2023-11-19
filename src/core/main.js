@@ -11,7 +11,7 @@ import { queryPineconeVectorStoreAndQueryLLM } from "./queryPineconeAndQueryGPT.
 
 const loader = new DirectoryLoader("src/documents", {
   ".txt": (path) => new TextLoader(path),
-  ".pdf": (path) => new PDFLoader(path),
+  // ".pdf": (path) => new PDFLoader(path),
 });
 const docs = await loader.load();
 const indexName = "red-index";

@@ -4,6 +4,7 @@ import { askQuestion }from './main.js';
 const sanitiseAnswer = (answer) => {
     answer = answer.replace(/```js/g, '');
     answer = answer.replace(/```javascript/g, '');
+    answer = answer.replace(/```typescript/g, '');
     answer = answer.replace(/```/g, '');
     return answer;
 }
