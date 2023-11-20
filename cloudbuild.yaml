@@ -11,7 +11,3 @@ steps:
 images:
 - 'gcr.io/${PROJECT_ID}/hook-generator:abcdef998877'
 artifacts:
-  paths:
-    - 'index.js'
-    - 'package.json'
-    - 'src/server.js'
