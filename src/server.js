@@ -16,10 +16,20 @@ app.get('/ping', (req, res) => {
 });
 
 app.post('/ai/get-answer', async (req, res) => {
-    const question = req.body?.question || req.body?.message;
-    const answer = await askQuestion(question);
-    return res.send({ answer });
+    try {
+        const question = req.body?.question || req.body?.message;
+        const answer = await askQuestion(question);
+        return res.send({ answer });
+    } catch (e) {
+        console.error('Oops something went wrong', e);
+        return res.status(500).send({ error: e });
+    }
 });
+
+app.post('/ai/get-answer-raw', async (req, res) => {
+    console.log('req.body', req.body);
+});
+
 
 app.listen(process.env.PORT || 3000, () => {
     console.log(`Server listening on port 3000`);
