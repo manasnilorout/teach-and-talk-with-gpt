@@ -11,3 +11,6 @@ steps:
 images:
 - 'gcr.io/${PROJECT_ID}/hook-generator:abcdef998877'
 artifacts:
+options:
+  logging:
+    loggingMode: NONE
