@@ -4,8 +4,6 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "ui": "npm run build && serve -s build",
-    "build": "react-scripts build",
     "ask": "node src/cli",
     "start": "node src/server",
     "teach": "node src/core/teachGpt",
