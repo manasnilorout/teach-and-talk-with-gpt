@@ -1,0 +1,17 @@
+steps:
+- name: 'Install dependencies'
+  id: install-deps
+  args: ['npm', 'i']
+- name: 'Build Docker image'
+  id: build-image
+  args: ['gcloud', 'builds', 'submit', '--tag', 'gcr.io/manas-sbot/hook-generator:abcdef998877', '.']
+- name: 'Deploy to Cloud Run'
+  id: deploy-to-cloud-run
+  args: ['gcloud', 'run', 'deploy', 'hook-generator', '--image', 'gcr.io/${PROJECT_ID}/hook-generator:abcdef998877', '--region', 'us-central1']
+images:
+- 'gcr.io/${PROJECT_ID}/hook-generator:abcdef998877'
+artifacts:
+  paths:
+    - 'index.js'
+    - 'package.json'
+    - 'src/server.js'
