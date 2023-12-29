@@ -4,8 +4,6 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "ui": "npm run build && serve -s build",
-    "build": "react-scripts build",
     "ask": "node src/cli",
     "start": "node src/server",
     "teach": "node src/core/teachGpt",
@@ -17,6 +15,7 @@
   "license": "ISC",
   "dependencies": {
     "@pinecone-database/pinecone": "^0.0.10",
+    "@vercel/node": "^3.0.11",
     "body-parser": "^1.20.2",
     "commander": "^11.0.0",
     "cors": "^2.8.5",
@@ -28,7 +27,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "^5.0.1",
-    "serve": "^14.2.1"
+    "serve": "^14.2.1",
+    "vercel": "^32.5.5"
   },
   "engines": {
     "npm": ">=8.0.0 <10.0.0",
